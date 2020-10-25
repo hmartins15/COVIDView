@@ -7,6 +7,10 @@ A simple application to view the European countries COVID data. It makes use of 
 From the command line:
 
 ```
+git clone https://github.com/hmartins15/COVIDView.git
+cd COVIDView
+./mvnw package
+cd target
 java -jar COVIDView-0.0.1-SNAPSHOT.jar
 ```
 
