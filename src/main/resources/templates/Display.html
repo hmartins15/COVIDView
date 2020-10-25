@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>European COVID Viewer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" media="all"
+	href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+</head>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	crossorigin="anonymous">
+
+<style>
+/* For sticky table header */
+th {
+	background: white;
+	position: sticky;
+	top: 0;
+	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+}
+</style>
+
+<body>
+	<div class="navbar navbar-dark bg-dark shadow-sm">
+		<div class="container d-flex justify-content-between">
+			<a class="navbar-brand d-flex align-items-center">
+				<h2>European COVID Viewer</h2>
+			</a>
+
+		</div>
+	</div>
+
+	<div class="jumbotron jumbotron-fluid bg-white">
+		<div class="container">
+			<h2>Worldwide Stats</h2>
+			<ul class="list-group list-group-flush">
+
+				<tr th:each="model : ${COVIDListWW}">
+					<li class="list-group-item"><b>Total Cases: </b>
+						<td><span th:text="${model.cases}"> Total Cases </span></td></li>
+					<li class="list-group-item"><b>Today Cases: </b>
+						<td><span th:text="${model.todayCases}"> Today Cases </span></td></li>
+					<li class="list-group-item"><b>Total Deaths: </b>
+						<td><span th:text="${model.deaths}"> Total Deaths </span></td></li>
+					<li class="list-group-item"><b>Today Deaths: </b>
+						<td><span th:text="${model.todayDeaths}"> Today Deaths
+						</span></td></li>
+					<li class="list-group-item"><b>Total Recovered: </b>
+						<td><span th:text="${model.recovered}"> Total
+								Recovered </span></td></li>
+					<li class="list-group-item"><b>Today Recovered: </b>
+						<td><span th:text="${model.todayRecovered}"> Today
+								Recovered </span></td></li>
+					<li class="list-group-item"><b>Active: </b>
+						<td><span th:text="${model.active}"> Active </span></td></li>
+					<li class="list-group-item"><b>Critical: </b>
+						<td><span th:text="${model.critical}"> Critical </span></td></li>
+					<li class="list-group-item"><b>Total Tests: </b>
+						<td><span th:text="${model.tests}"> Total Tests </span></td></li>
+				</tr>
+			</ul>
+		</div>
+	</div>
+
+	<table class="table table-striped  data-sticky-header">
+		<thead>
+			<tr>
+				<th>Country</th>
+				<th>Total Cases</th>
+				<th>Today Cases</th>
+				<th>Total Deaths</th>
+				<th>Today Deaths</th>
+				<th>Total Recovered</th>
+				<th>Today Recovered</th>
+				<th>Active</th>
+				<th>Critical</th>
+				<th>Total Tests</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="model : ${COVIDListEU}">
+				<td><span th:text="${model.country}"> Country </span></td>
+				<td><span th:text="${model.cases}"> Total Cases </span></td>
+				<td><span th:text="${model.todayCases}"> Today Cases </span></td>
+				<td><span th:text="${model.deaths}"> Total Deaths </span></td>
+				<td><span th:text="${model.todayDeaths}"> Today Deaths </span></td>
+				<td><span th:text="${model.recovered}"> Total Recovered
+				</span></td>
+				<td><span th:text="${model.todayRecovered}"> Today
+						Recovered </span></td>
+				<td><span th:text="${model.active}"> Active </span></td>
+				<td><span th:text="${model.critical}"> Critical </span></td>
+				<td><span th:text="${model.tests}"> Total Tests </span></td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+
+</html>
