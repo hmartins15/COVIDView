@@ -44,6 +44,7 @@ To sort the table row values
 ## Versions
 * Java 8 or above
 * Spring-boot 2.3.4
+* Maven 3.6.3
 
 
 ## Authors
