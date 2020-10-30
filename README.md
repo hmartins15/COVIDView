@@ -1,6 +1,6 @@
 # European COVID Viewer
 
-A simple application to view the European countries COVID data. It makes use of the [disease.sh](https://disease.sh/) API, to get the information. This application was developed using spring-boot. 
+A simple application to display COVID data from European countries. It makes use of the [disease.sh](https://disease.sh/) API, to get the information. This application was developed using spring-boot. 
 
 ### To run the application
 
